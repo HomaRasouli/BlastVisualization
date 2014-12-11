@@ -1,5 +1,5 @@
 
-function GetTheHSPS(qury,hits){
+function GetTheHSPS(){
      var qyery2= qury;
      var xhr = require("xhr");
      var parser = require("biojs-io-blast");
@@ -29,22 +29,19 @@ function queryOutput(){
      console.log(data);
 	 var queryout=data.iterations[0]["query-def"];
 	 document.write(queryout);
-	 });
+	 });}
 function InputQuery() {
   var querydb = document.getElementById('QueryDB');
-  var hitssample = document.getElementById('hitssample');
   var query = querydb.value;
   var hits = hitssample.value;
-  return [query, hits];
+  return [query];
 }
 function main() {
   document.getElementById('QueryDB').value = "Query_1"
-  document.getElementById('hitssample').value = "gnl|BL_ORD_ID|140988";
+  //document.getElementById('hitssample').value = "gnl|BL_ORD_ID|140988";
   var input = InputQuery();
   var mybutn = document.getElementById('submit');
   mybutn.onclick function(){ 
   	var input = InputQuery();
   	GetTheHSPS();
   }
-}
-$( document ).ready(main);
